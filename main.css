@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #222831;
+  color: #fff;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+svg {
+  margin-top: -60px;
+  margin-right: 50px;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: #ffd369;
+  stroke-width: 5px;
+  stroke-linecap: round;
+}
+
+.figure-part {
+  display: none;
+}
+
+.hangman-container {
+  padding: 20px 30px;
+  position: relative;
+  margin: auto;
+  height: 420px;
+  width: 450px;
+}
+
+.wrong-letters-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.wrong-letters-container p {
+  margin: 0 0 5px;
+}
+
+.wrong-letters-container span {
+  font-size: 20px;
+} 
+
+.word {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+
+.letter {
+  border-bottom: 3px solid #ffd369;
+  display: inline-flex;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3px;
+  height: 50px;
+  width: 20px;
+}
+
+.popup-container {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background: #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.play-button {
+  cursor: pointer;
+  background: #fff;
+  color: #2980b9;
+  border: 0;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+.play-button:active {
+  transform: scale(0.98);
+}
+
+.play-button:focus {
+  outline: 0;
+}
+
+.notification-container {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -400px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.notification-container p {
+  margin: 0;
+}
+
+.notification-container.show {
+  transform: translateY(-410px);
+}
+
+@media(max-width: 700px) {
+  body p h1 {
+    text-align: center;
+    position: relative;
+  }
+
+  p {
+    padding: 10px;
+  }
+
+  .hangman-container {
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+  }
+
+  .word {
+    padding-top: 150px;
+  }
+
+  .wrong-letters-container {
+    position: inherit;
+    text-align: center;
+  }
+
+  .notification-container.show {
+    transform: translateY(-300px);
+  }
+
+  .popup-container {
+    position: absolute;
+  }
+}

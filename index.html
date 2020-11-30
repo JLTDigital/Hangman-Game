@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/main.css">
+  <title>Hangman | The Game</title>
+</head>
+<body>
+  <h1>Hangman</h1>
+  <p>Classic Hangman <br> Guess the word and save the guy <br> Enter a letter...</p>
+  <div class="hangman-container">
+    <svg height="350" width="350" class="figure-container">
+      <!-- Hang Pole -->
+      <line x1="100" y1="20" x2="210" y2="20"></line>
+      <line x1="210" y1="20" x2="210" y2="60"></line>
+      <line x1="100" y1="20" x2="100" y2="300"></line>
+      <line x1="0" y1="300" x2="200" y2="300"></line>
+      <line x1="200" y1="300" x2="200" y2="350"></line>
+      <line x1="0" y1="350" x2="200" y2="350"></line>
+      <line x1="0" y1="350" x2="200" y2="300"></line>
+      <line x1="0" y1="300" x2="200" y2="350"></line>
+      <line x1="0" y1="350" x2="0" y2="300"></line>
+
+      <!-- Head -->
+      <circle class="figure-part" cx="210" cy="80" r="20"></circle>
+      <line class="figure-part" x1="190" y1="80" x2="230" y2="80"></line>
+
+      <!-- Body -->
+      <line class="figure-part" x1="210" y1="100" x2="210" y2="150"></line>
+
+      <!-- Arms -->
+      <line class="figure-part" x1="210" y1="130" x2="180" y2="100"></line>
+      <line class="figure-part" x1="210" y1="130" x2="240" y2="100"></line>
+
+      <!-- Legs -->
+      <line class="figure-part" x1="210" y1="150" x2="190" y2="180"></line>
+      <line class="figure-part" x1="210" y1="150" x2="230" y2="180"></line>
+    </svg>
+
+    <div class="wrong-letters-container">
+      <div id="wrong-letters">
+        <p>Wrong Letters</p>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="word" id="word"></div>
+
+  <!-- Message Container -->
+  <div class="popup-container" id="popup-container">
+    <div class="popup">
+      <h2 id="ending-message"></h2>
+      <button class="play-button" id="play-button">Play Again</button>
+    </div>
+  </div>
+
+  <!-- Notification Slider -->
+  <div class="notification-container" id="notification-container">
+    <p>Already used this letter, Try Again</p>
+  </div>
+
+  <script src="/main.js"></script>
+</body>
+</html>
